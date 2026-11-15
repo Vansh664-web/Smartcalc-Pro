@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f6f7fb" />
+  <meta name="description" content="SmartCalc Pro — one platform for every calculation." />
+  <title>SmartCalc Pro — One Platform. Every Calculation.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" aria-label="SmartCalc Pro home"><span class="brand-mark">✳</span><span>smartcalc<span class="brand-pro"> pro</span></span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item active" href="#home" data-page="home"><span>◫</span> Overview</a>
+        <a class="nav-item" href="#calculators" data-page="calculators"><span>▦</span> All calculators <b id="nav-count">0</b></a>
+        <a class="nav-item" href="#favorites" data-page="favorites"><span>☆</span> Favorites</a>
+        <a class="nav-item" href="#history" data-page="history"><span>↺</span> History</a>
+      </nav>
+      <div class="side-divider"></div>
+      <div class="workspace-label">CATEGORIES</div>
+      <nav id="category-nav" class="side-nav category-nav"></nav>
+      <div class="sidebar-bottom">
+        <div class="pro-card"><div class="pro-spark">✦</div><strong>Math, made simple.</strong><p>Your toolkit for everyday decisions.</p><button class="text-button" id="explore-btn">Explore tools <span>→</span></button></div>
+        <div class="profile-row"><div class="avatar">S</div><div><strong>SmartCalc user</strong><small>Personal workspace</small></div><button id="theme-toggle" class="icon-button" title="Toggle theme" aria-label="Toggle theme">◐</button></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="menu-toggle" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb"><span>Workspace</span><i>/</i><strong id="crumb-current">Overview</strong></div>
+        <div class="top-actions"><div class="top-date" id="today-label"></div><button class="icon-button" id="top-theme" title="Toggle theme" aria-label="Toggle theme">◐</button><div class="avatar avatar-small">S</div></div>
+      </header>
+
+      <section class="page-view" id="home-view">
+        <div class="hero-row">
+          <div><div class="eyebrow"><span class="live-dot"></span> YOUR CALCULATION WORKSPACE</div><h1>Good day. <span class="wave">✦</span></h1><p class="hero-subtitle">The right answer is just a calculation away.</p></div>
+          <button class="primary-button" id="open-standard"><span>＋</span> New calculation</button>
+        </div>
+
+        <div class="search-wrap"><span class="search-icon">⌕</span><input id="search-input" type="search" placeholder="Search 80+ calculators, formulas, or topics..." autocomplete="off" aria-label="Search calculators" /><kbd>⌘ K</kbd><div class="search-results" id="search-results"></div></div>
+
+        <section class="stats-grid" id="stats-grid"></section>
+
+        <div class="content-grid">
+          <section class="main-column">
+            <div class="section-heading"><div><div class="eyebrow muted-eyebrow">PICK UP WHERE YOU LEFT OFF</div><h2>Popular calculators</h2></div><a href="#calculators" class="inline-link" data-page="calculators">Explore all <span>→</span></a></div>
+            <div class="popular-grid" id="popular-grid"></div>
+
+            <div class="section-heading category-heading"><div><div class="eyebrow muted-eyebrow">YOUR TOOLKIT</div><h2>Browse by category</h2></div></div>
+            <div class="category-grid" id="category-grid"></div>
+
+            <div class="section-heading history-heading"><div><div class="eyebrow muted-eyebrow">YOUR WORKSPACE</div><h2>Recent calculations</h2></div><a href="#history" class="inline-link" data-page="history">View all <span>→</span></a></div>
+            <div class="history-card" id="recent-history"></div>
+          </section>
+
+          <aside class="right-column">
+            <section class="panel recent-panel"><div class="panel-heading"><div><div class="eyebrow muted-eyebrow">QUICK ACCESS</div><h3>Recently used</h3></div><span class="panel-icon">↗</span></div><div id="recently-used" class="recently-used"></div></section>
+            <section class="panel favorite-panel"><div class="panel-heading"><div><div class="eyebrow muted-eyebrow">YOUR SHORTLIST</div><h3>Favorites</h3></div><span class="panel-icon gold">☆</span></div><div id="favorite-list" class="favorite-list"></div></section>
+            <section class="panel formula-panel"><div class="panel-heading"><div><div class="eyebrow muted-eyebrow">A LITTLE KNOWLEDGE</div><h3>Formula reference</h3></div><button class="subtle-button" id="formula-more">View all</button></div><div id="formula-list" class="formula-list"></div></section>
+            <div class="quote-card"><div class="quote-mark">“</div><p>Without mathematics, there's nothing you can do. Everything around you is mathematics.</p><span>— Shakuntala Devi</span><div class="quote-orb"></div></div>
+          </aside>
+        </div>
+        <footer class="footer"><span>© 2025 SmartCalc Pro</span><span>Thoughtfully calculated <span class="footer-heart">✦</span></span><a href="#formulas" id="footer-formulas">Formula library →</a></footer>
+      </section>
+
+      <section class="page-view hidden" id="listing-view"><div class="listing-head"><div class="eyebrow muted-eyebrow" id="listing-eyebrow">CALCULATOR LIBRARY</div><h1 id="listing-title">All calculators</h1><p id="listing-description">Every tool you need, organized in one place.</p></div><div class="listing-tools"><div class="search-wrap listing-search"><span class="search-icon">⌕</span><input id="listing-search" type="search" placeholder="Search calculators..." /></div><select id="category-filter" aria-label="Filter category"><option value="all">All categories</option></select></div><div id="all-calculators" class="all-calculators"></div><div id="empty-state" class="empty-state hidden"><span>⌕</span><h3>No calculators found</h3><p>Try another search or choose a different category.</p></div></section>
+      <section class="page-view hidden" id="history-view"><div class="listing-head"><div class="eyebrow muted-eyebrow">YOUR WORKSPACE</div><div class="heading-with-action"><h1>Calculation history</h1><button class="secondary-button" id="clear-history">Clear history</button></div><p>Your calculations, all in one place. Saved only on this device.</p></div><div class="history-card full-history" id="full-history"></div></section>
+      <section class="page-view hidden" id="formulas-view"><div class="listing-head"><div class="eyebrow muted-eyebrow">THE REFERENCE DESK</div><h1>Quick formula reference</h1><p>A handy collection of formulas for everyday problem-solving.</p></div><div id="all-formulas" class="formula-library"></div></section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="calculator-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="calculator-modal"><button class="modal-close icon-button" id="modal-close" aria-label="Close calculator">×</button><div id="modal-content"></div></div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="calculations.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
