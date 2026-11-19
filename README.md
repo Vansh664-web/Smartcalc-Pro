@@ -20,7 +20,8 @@ needs a small local server so the API key never reaches the browser.
 1. Create a `.env` file in this directory (it is git-ignored):
 
    ```sh
-   GEMINI_API_KEY=your-key-here
+   cp .env.example .env
+   # then edit .env and set GEMINI_API_KEY=your-key-here
    # optional: GEMINI_MODEL=gemini-3.8-flash
    ```
 
@@ -47,6 +48,7 @@ Run the self-contained Node test suites:
 ```sh
 node tests/calculations.test.js
 node tests/all-calculators.test.js
+node tests/ai.test.js        # needs "node server.js" running
 ```
 
 The second suite runs every one of the 79 calculators against defaults, zeros,

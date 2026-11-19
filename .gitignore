@@ -1,5 +1,6 @@
 # Local secrets - never commit
 .env
 .env.*
+!.env.example
 *.pem
 node_modules/
