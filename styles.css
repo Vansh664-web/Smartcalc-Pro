@@ -3,3 +3,51 @@
 @media(max-width:960px){.content-grid{grid-template-columns:1fr}.right-column{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}.formula-panel,.quote-card{grid-column:auto}.formula-panel{grid-row:span 2}.stats-grid{grid-template-columns:repeat(2,1fr)}.popular-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.category-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.sidebar{width:205px}.main-content{margin-left:205px;padding:0 22px}}
 @media(max-width:700px){.sidebar{transform:translateX(-100%);transition:transform .22s;box-shadow:var(--shadow)}.sidebar.open{transform:translateX(0)}.main-content{margin-left:0;padding:0 17px}.topbar{height:57px}.mobile-menu{display:block;margin-right:7px}.breadcrumb{margin-right:auto}.top-date{display:none}.hero-row{align-items:flex-start;gap:12px}.hero-row h1{font-size:25px}.hero-subtitle{font-size:10px}.hero-row>.primary-button{font-size:0;padding:9px 11px}.hero-row>.primary-button span{font-size:17px;margin:0}.page-view{padding-top:23px}.popular-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.calc-card{min-height:128px}.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.right-column{grid-template-columns:1fr 1fr}.formula-panel{grid-column:1/-1;grid-row:auto}.quote-card{grid-column:1/-1}.stats-grid{margin:15px 0 24px}.footer{gap:10px;flex-wrap:wrap}.all-calculators{grid-template-columns:repeat(2,minmax(0,1fr))}.listing-tools{align-items:stretch}.listing-tools select{min-width:125px}.history-row{grid-template-columns:minmax(125px,1fr) minmax(90px,.8fr) auto;gap:8px}.history-date{display:none}.full-history .history-row{grid-template-columns:minmax(120px,1fr) minmax(90px,.8fr) auto}.formula-library{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:440px){.main-content{padding:0 13px}.hero-row h1{font-size:23px}.stats-grid{gap:7px}.stat-card{padding:10px 9px;gap:8px}.stat-icon{width:30px;height:30px;font-size:14px}.stat-value{font-size:15px}.stat-label{font-size:8px}.stat-trend{display:none}.popular-grid{gap:7px}.calc-card{padding:10px;min-height:126px}.calc-card h3{font-size:10px}.category-tile{padding:9px 8px;gap:7px}.category-tile strong{font-size:9px}.right-column{grid-template-columns:1fr}.formula-panel,.quote-card{grid-column:auto}.listing-head h1{font-size:23px}.listing-tools{flex-direction:column}.listing-tools select{height:38px}.all-calculators{gap:7px}.all-calculators .calc-card{min-height:122px}.formula-library{grid-template-columns:1fr}.calculator-modal{padding:21px 17px;border-radius:13px}.form-grid{grid-template-columns:1fr 1fr;gap:10px}.result-value{font-size:20px}.history-row{grid-template-columns:1fr auto}.history-input{display:none}.history-result{text-align:right}.row-actions{grid-column:1/-1;justify-content:flex-end;margin-top:-5px}.full-history .history-row{grid-template-columns:1fr auto}}
+
+/* ---------- AI Math Tutor ---------- */
+.nav-ai{color:#6d5bd0}
+.nav-ai span{color:#8d79d6}
+.nav-ai b{background:var(--plum);color:var(--plum-ink);padding:2px 5px;border-radius:4px;font-size:7px;letter-spacing:.6px}
+.nav-ai:hover{background:var(--plum)}
+.ai-panel{background:linear-gradient(140deg,#f4f1ff,#fbfaff 75%);border-color:#e8e4fb}
+.ai-panel .panel-icon{color:#8d79d6}
+.ai-panel-copy{font-size:9px;color:#8b91a6;margin:8px 0 11px;line-height:1.6}
+.ai-panel-button{width:100%;padding:9px 12px;font-size:10px}
+.ai-modal{width:min(100%,640px)}
+.ai-thread{display:flex;flex-direction:column;gap:9px;margin-top:18px;max-height:min(46vh,380px);overflow:auto;padding-right:4px;scroll-behavior:smooth}
+.ai-msg{max-width:92%;padding:10px 12px;border-radius:11px;font-size:10.5px;line-height:1.65;overflow-wrap:anywhere}
+.ai-msg p{margin:0 0 5px}
+.ai-msg p:last-child{margin-bottom:0}
+.ai-msg.user{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:4px}
+.ai-msg.bot{align-self:flex-start;background:var(--surface-2);border:1px solid var(--line);color:var(--text);border-bottom-left-radius:4px}
+.ai-msg.error{align-self:flex-start;background:#fff1f0;border:1px solid #f6d9d6;color:#b74f4c}
+.ai-msg ul,.ai-msg ol{margin:4px 0 6px;padding-left:18px}
+.ai-msg li{margin:2px 0}
+.ai-msg code{background:rgba(80,102,216,.1);color:var(--accent-dark);padding:1px 4px;border-radius:3px;font-size:9.5px}
+.ai-msg strong{font-weight:700}
+.ai-h{font-weight:700;margin:7px 0 3px;font-size:10.5px}
+.ai-hint{font-size:9px;color:#a06a66;margin-top:6px!important}
+.ai-form{display:flex;gap:8px;margin-top:14px}
+.ai-form input{flex:1;height:41px;border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:0 12px;color:var(--text);outline:none;font-size:11px;min-width:0}
+.ai-form input:focus{border-color:#9aa6ef;box-shadow:0 0 0 3px rgba(80,102,216,.08)}
+.ai-form .primary-button{padding:0 16px;font-size:10px;white-space:nowrap}
+.ai-form .primary-button:disabled{opacity:.6;cursor:progress;transform:none}
+.ai-suggestions{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.ai-suggestions button{border:1px solid var(--line);background:var(--surface);color:#7a84a0;border-radius:20px;padding:5px 10px;font-size:9px;transition:.16s}
+.ai-suggestions button:hover{border-color:#cdd3f5;background:var(--accent-light);color:var(--accent)}
+.ai-note{font-size:8px;color:#a3aab6;margin:10px 0 0}
+.ai-typing{display:flex;gap:4px;padding:3px 0}
+.ai-typing span{width:6px;height:6px;border-radius:50%;background:#a9b0c4;animation:aiPulse 1s infinite ease-in-out}
+.ai-typing span:nth-child(2){animation-delay:.15s}
+.ai-typing span:nth-child(3){animation-delay:.3s}
+@keyframes aiPulse{0%,80%,100%{opacity:.35;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+.theme-dark .nav-ai{color:#b9a9ea}
+.theme-dark .nav-ai b{background:#332a4a;color:#c2b0ec}
+.theme-dark .nav-ai:hover{background:#2a2340}
+.theme-dark .ai-panel{background:linear-gradient(140deg,#231f36,#1d2233 75%);border-color:#312c4a}
+.theme-dark .ai-msg.bot{background:#1d2837;border-color:#2b3a52}
+.theme-dark .ai-msg.error{background:#3c252a;border-color:#57313a;color:#f19991}
+.theme-dark .ai-msg code{background:rgba(130,146,255,.14);color:#aab4ff}
+.theme-dark .ai-typing span{background:#7d879b}
+@media(max-width:700px){.ai-thread{max-height:42vh}.ai-form{flex-wrap:nowrap}.ai-suggestions{display:none}}
+@media(max-width:440px){.ai-modal{padding:20px 15px}.ai-msg{max-width:96%}.ai-form .primary-button{padding:0 12px}}

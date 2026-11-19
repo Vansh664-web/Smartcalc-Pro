@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-SmartCalc Pro is a dependency-free browser app. `index.html` defines the dashboard and calculator dialog, `styles.css` contains the responsive design system, and `app.js` handles navigation, rendering, interactions, and local persistence. Keep formulas and calculator schemas in `calculations.js`. Calculation tests live in `tests/calculations.test.js`; user-facing run instructions are in `README.md`.
+SmartCalc Pro is a browser app with one optional Node server. `index.html` defines the dashboard and calculator dialog, `styles.css` contains the responsive design system, and `app.js` handles navigation, rendering, interactions, and local persistence. Keep formulas and calculator schemas in `calculations.js`. `server.js` serves the app locally and proxies the AI Tutor to Gemini; `netlify/functions/solve.js` is the production equivalent. Calculation tests live in `tests/`; user-facing run instructions are in `README.md`.
 
 ## Build, Test, and Development Commands
 
@@ -22,4 +22,4 @@ Keep changes focused and describe the user-visible behavior and formula assumpti
 
 ## Configuration & Data
 
-History, favorites, recent tools, and theme are stored in the browser’s local storage on the user’s device. Do not add credentials or transmit calculation data to external services without a clear product requirement.
+History, favorites, recent tools, and theme are stored in the browser’s local storage on the user’s device. Do not add credentials or transmit calculation data to external services without a clear product requirement. The Gemini key belongs in `.env` or the host’s environment variables — never in a committed file, never in client JavaScript, and never in the repository.
